@@ -62,11 +62,38 @@
       color: #7C8590;
       margin-right: 1.5rem;
     }
+    .signal-states {
+      margin: 1rem 0 1.5rem 0;
+    }
+    .signal-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-none { background: #3B414A; }
+    .dot-low { background: #3FB950; }
+    .dot-rising { background: #D29922; }
+    .dot-high { background: #F85149; }
+    .signal-desc {
+      color: #7C8590;
+    }
   </style>
 </head>
 <body>
   <h1>Neurometer</h1>
   <p class="meta">Real-time departure pressure signals</p>
+
+  <p>
+    Know when a place is busy before you arrive.
+  </p>
 
   <p>
     Neurometer is an instrument that visualizes environmental activity pressure
@@ -76,6 +103,20 @@
     only.
   </p>
 
+  <h2>How It Works</h2>
+  <ul>
+    <li>Contributing devices share anonymous departure signals — no location history, no identity</li>
+    <li>Signals are aggregated into real-time pressure readings for nearby areas</li>
+    <li>An ambient status icon shows current conditions at a glance</li>
+  </ul>
+
+  <div class="signal-states">
+    <div class="signal-row"><span class="dot dot-none"></span><span>No Signal</span><span class="signal-desc">— no data available for this area</span></div>
+    <div class="signal-row"><span class="dot dot-low"></span><span>Low</span><span class="signal-desc">— minimal activity detected</span></div>
+    <div class="signal-row"><span class="dot dot-rising"></span><span>Rising</span><span class="signal-desc">— activity is increasing</span></div>
+    <div class="signal-row"><span class="dot dot-high"></span><span>High Activity</span><span class="signal-desc">— significant movement in the area</span></div>
+  </div>
+
   <h2>What Neurometer Is Not</h2>
   <ul>
     <li>Not a tracking or surveillance system</li>
@@ -83,6 +124,11 @@
     <li>Not a navigation, recommendation, or prediction engine</li>
     <li>Not a safety system — it augments awareness, does not replace it</li>
   </ul>
+
+  <p>
+    No accounts. No tracking. No personal data stored. Neurometer is a
+    read-only instrument — it shows pressure, not people.
+  </p>
 
   <a class="store-link" href="https://play.google.com/store/apps/details?id=app.neurometer">Get it on Google Play</a>
 
